@@ -7,6 +7,8 @@ Features:
 - Switch to connect load to substation
 - Two loads of 1.2 MVA constant power
 
+![network.png](network.png "Network diagram")
+
 Results (see `Actions` tab):
 
 - Voltage profile
