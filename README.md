@@ -1,7 +1,13 @@
-# New project template
+# Port simulation
 
-To create your own GridLAB-D simulation project you must do the following:
+Features:
 
-1. Create a new repository using [`gridlabd-tutorials/.new_project`](https://github.com/gridlabd-tutorials/.new_project) as a template.
-2. Edit the file [`main.glm`](main.glm) to create your model.
-3. Go to the **[Actions](../../actions)** tab to view the result of the simulation run.
+- Main feeder with voltage regulator
+- Two substations, each with two berths
+- Switch to connect load to substation
+- Two loads of 1.2 MVA constant power
+
+Results (see `Actions` tab):
+
+- Voltage profile
+- JSON model 
