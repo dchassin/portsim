@@ -1,0 +1,183 @@
+//
+// Nodes
+//
+
+object node 
+{
+    name "Node0";
+    phases "ABCN";
+    bustype SWING;
+    voltage_A 6.6+0d kV;
+    voltage_B 6.6-120d kV;
+    voltage_C 6.6+120d kV;
+    nominal_voltage 6.6 kV;
+} 
+ 
+object node 
+{
+    name "Node1";
+    phases "ABCN";
+    nominal_voltage 6.6 kV;
+}
+
+object node 
+{
+    name "Node2A";
+    phases "ABCN";
+    nominal_voltage 6.6 kV;
+}
+
+object node 
+{
+    name "Node2B";
+    phases "ABCD";
+    nominal_voltage 6.6 kV;
+}
+
+object node 
+{
+    name "Node2A1";
+    phases "ABCN";
+    nominal_voltage 480 V;
+}
+
+object node 
+{
+    name "Node2B1";
+    phases "ABCD";
+    nominal_voltage 480 V;
+}
+
+object node 
+{
+    name "Node3A";
+    phases "ABCN";
+    nominal_voltage 480 V;
+}
+ 
+object node 
+{
+    name "Node3B";
+    phases "ABCN";
+    nominal_voltage 480 V;
+}
+ 
+//
+// Regulators
+//
+
+object regulator 
+{
+    name "Regulator1";
+    phases "ABC";
+    from "Node0";
+    to "Node1";
+    configuration "regulator_configuration";
+}
+
+//
+// Transformers
+//
+
+object transformer 
+{
+    name "TransformerA";
+    phases "ABCN";
+    from "Node2A";
+    to "Node2A1";
+    configuration "transformer_configuration";
+}
+  
+object transformer 
+{
+    name "TransformerB";
+    phases "ABCN";
+    from "Node2B";
+    to "Node2B1";
+    configuration "transformer_configuration";
+}
+    
+//
+// Power lines
+//
+
+object overhead_line 
+{
+     name "OL-Node1-Node2A";
+     phases "ABCN";
+     from "Node1";
+     to "Node2A";
+     length 0.5 mile;
+     configuration "line_configuration1";
+}
+
+object overhead_line 
+{
+     name "OL-Node1-Node2B";
+     phases "ABCN";
+     from "Node1";
+     to "Node2B";
+     length 0.5 mile;
+     configuration "line_configuration1";
+}
+
+object underground_line 
+{
+     name "UL-Node2A1-Node3A";
+     phases "ABCN";
+     from "Node2A1";
+     to "Node3A";
+     length 63 ft;
+     configuration "line_configuration2";
+}
+
+object underground_line 
+{
+     name "UL-Node2B1-Node3B";
+     phases "ABCN";
+     from "Node2B1";
+     to "Node3B";
+     length 63 ft;
+     configuration "line_configuration2";
+}
+
+//
+// Switches
+//
+
+object switch 
+{
+     name "SW-Node3A-Load4A";
+     phases "ABCN";
+     from "Node3A";
+     to "Load4A";
+     status CLOSED;
+}
+
+object switch 
+{
+     name "SW-Node3A-Load5A";
+     phases "ABCN";
+     from "Node3A";
+     to "Load5A";
+     status OPEN;
+}
+
+object switch 
+{
+     name "SW-Node3B-Load4B";
+     phases "ABCN";
+     from "Node3B";
+     to "Load4B";
+     status CLOSED;
+}
+
+object switch 
+{
+     name "SW-Node3B-Load5B";
+     phases "ABCN";
+     from "Node3B";
+     to "Load5B";
+     status OPEN;
+}
+

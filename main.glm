@@ -1,1 +1,23 @@
-#print TODO: create your model in this file
+//
+// Simple model of a port with 4 berths on 2 substations
+//
+// Author: DP Chassin
+// Created: Aug 2024
+//
+
+#set initializeonly=TRUE // single solution only -- no timeseries
+#set suppress_repeat_messages=FALSE // see all warning messages explicitly
+
+module powerflow 
+{
+    solver_method NR;
+}
+
+#include "conductors.glm"
+#include "transformers.glm"
+#include "network.glm"
+#include "loads.glm"
+
+#set savefile=gridlabd.json
+
+#output "voltage-profile.png" -t profile -l 10

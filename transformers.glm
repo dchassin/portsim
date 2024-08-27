@@ -1,0 +1,26 @@
+// Transformer configuration
+object transformer_configuration 
+{
+    name "transformer_configuration";
+    connect_type WYE_WYE;
+    install_type PADMOUNT;
+    power_rating 3.0 MVA;
+    primary_voltage 6.6 kV;
+    secondary_voltage 480 V;
+    resistance 0.011 Ohm;
+    reactance 0.02 Ohm;
+}
+
+// Regulator configuration
+object regulator_configuration 
+{
+    name "regulator_configuration";
+    connect_type WYE_WYE;
+    band_center 2300;
+    band_width 20.0;
+    time_delay 30.0;
+    raise_taps 16;
+    lower_taps 16;
+    regulation 0.10;
+    Control OUTPUT_VOLTAGE;
+}

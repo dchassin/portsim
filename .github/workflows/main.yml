@@ -16,3 +16,15 @@ jobs:
 
     - name: Run simulation
       run: gridlabd main.glm
+
+    - name: Save voltage profile
+      uses: actions/upload-artifact@v3
+      with:
+        name: Voltage profile
+        path: voltage-profile.png
+
+    - name: Save JSON model
+      uses: actions/upload-artifact@v3
+      with:
+        name: JSON model
+        path: gridlabd.json

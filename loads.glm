@@ -1,0 +1,41 @@
+object load 
+{
+     name Load4A;
+     phases "ABCN";
+     constant_power_A 400+40j kVA;
+     constant_power_B 400+40j kVA;
+     constant_power_C 400+40j kVA;
+     nominal_voltage 480 V;
+}
+ 
+object load 
+{
+     name Load5A;
+     phases "ABCN";
+     constant_power_A 0+0j kVA;
+     constant_power_B 0+0j kVA;
+     constant_power_C 0+0j kVA;
+     nominal_voltage 480 V;
+}
+ 
+object load 
+{
+     name Load4B;
+     phases "ABCN";
+     constant_power_A 400+40j kVA;
+     constant_power_B 400+40j kVA;
+     constant_power_C 400+40j kVA;
+     nominal_voltage 480 V;
+}
+ 
+object load 
+{
+     name Load5B;
+     phases "ABCN";
+     constant_power_A 0+0j kVA;
+     constant_power_B 0+0j kVA;
+     constant_power_C 0+0j kVA;
+     nominal_voltage 480 V;
+}
+ 
+#set savefile=gridlabd.json
